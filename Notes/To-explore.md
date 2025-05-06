@@ -1,0 +1,19 @@
+## Topics to explore
+- Load Balancing – Use NGINX, HAProxy, AWS ELB to distribute client requests.
+- Load Balancing Strategies (Round Robin, Least Connections, etc.)
+- Reverse Proxy vs Load Balancer
+- Service Discovery (Consul, Eureka, DNS-based)
+- Global Load Balancing (GeoDNS, Anycast)
+- Rate Limiting & Throttling
+- Zero-Downtime Deployments with Load Balancers
+- Load Balancer in Kubernetes (Ingress Controller)
+- Cloud Auto-Scaling (AWS, GCP, Azure)
+- Database Scaling (Sharding vs Replication vs Read Replicas)
+- Database Replication – Avoid bottlenecks by using read replicas.
+- Caching – Reduce load using Redis, Memcached, CDN caching.
+- Asynchronous Communication – Use message queues (Kafka, RabbitMQ) to decouple services.
+- API Security – Use OAuth, JWT, TLS encryption for secure authentication.
+- Microservices vs Monolithic Architecture
+- REST vs gRPC vs WebSockets
+- Load Balancing Strategies
+
