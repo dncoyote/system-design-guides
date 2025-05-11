@@ -1,0 +1,11 @@
+{
+  "namespace": "com.dncoyote.kafka.avro",
+  "type": "record",
+  "name": "UserActivity",
+  "fields": [
+    { "name": "userId", "type": "string" },
+    { "name": "action", "type": "string" },
+    { "name": "timestamp", "type": "string" }
+  ]
+}
+
