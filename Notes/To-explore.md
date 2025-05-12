@@ -16,4 +16,10 @@
 - Microservices vs Monolithic Architecture
 - REST vs gRPC vs WebSockets
 - Load Balancing Strategies
-
+- Cache Invalidation Strategies (Manual vs Event-driven)
+- CAP Theorem and Caching
+- Content Delivery Networks (CDNs)
+- Redis Cluster vs Sentinel vs Standalone
+- Bloom Filters & Caching (used in Facebook & Netflix)
+- Database Read Replicas vs Caching
+- Lazy vs Eager Loading

@@ -138,3 +138,53 @@ Client-Server Architecture is a fundamental design pattern in distributed system
 - Traefik - L7 - Cloud Native, automatic Service Discovery
 - Envoy Proxy - L7 - Used in Service Meshes
 
+# **Caching**
+Caching is the technique of storing frequently accessed data in a fast-access layer (like memory or SSDs) to reduce
+ - Latency: Faster responses to the client.
+ - Load: Lower pressure on backend servers or databases.
+ - Cost: Reduced usage of I/O and compute resources.
+## Types
+### In-Memory Caching
+- Stored directly in application memory (e.g., HashMap, Guava, Caffeine).
+- Ultra-fast (nanoseconds).
+- Limited to the local instance.
+- Best for: small, frequently used, read-heavy data (e.g., config values, small lookups).
+- Not shared across instances.
+### Distributed Caching
+- Shared cache across multiple app instances (e.g., Redis, Memcached).
+- Supports high availability and replication.
+- Best for: API results, DB query results, user sessions, auth tokens.
+- Higher latency than in-memory cache but scales horizontally.
+### CDN Cache
+- Static content like images, videos, HTML/CSS/JS.
+- Cached at edge locations (e.g., Cloudflare, AWS CloudFront).
+- Offloads traffic from origin servers
+- Not suitable for dynamic content
+### Database Caching
+- Caches query results at the DB level or app level.
+- Speeds up heavy queries
+- Often used with Materialized Views or Query Caching (PostgreSQL, MySQL)
+## Caching Strategies
+### Write-Through
+- Data is written to cache and DB at the same time.
+- Cache is always fresh.
+- Good for strong consistency.
+### Write-Behind
+- Data is first written to the cache and later persisted to the DB asynchronously.
+- Good for high write throughput, but risk of data loss.
+### Read-Through
+- App reads from the cache.
+- If missing, cache retrieves from DB and stores it.
+- Abstracts the cache from the application.
+### Cache Aside (Lazy Loading)
+- App first checks the cache.
+- If miss: fetch from DB → store in cache → return to client.
+- Most common strategy. Gives more control to the app.
+## Eviction Policies
+| Policy      | Description      |
+| ------------- | ------------- |
+| LRU (Least Recently Used) | Evicts the entry that hasn't been accessed recently |
+| LFU (Least Frequently Used) | Removes least accessed items |
+| TTL (Time To Live) | Auto-expires items after a set time |
+| Manual Invalidation | App explicitly clears cache |
+
