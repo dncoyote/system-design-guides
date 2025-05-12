@@ -23,3 +23,9 @@
 - Bloom Filters & Caching (used in Facebook & Netflix)
 - Database Read Replicas vs Caching
 - Lazy vs Eager Loading
+- Database Indexing
+- CAP Theorem in Databases
+- Polyglot Persistence
+- Event Sourcing with Databases
+- Materialized Views
+- Connection Pooling

@@ -188,3 +188,46 @@ Caching is the technique of storing frequently accessed data in a fast-access la
 | TTL (Time To Live) | Auto-expires items after a set time |
 | Manual Invalidation | App explicitly clears cache |
 
+# **Databases**
+A database is an organized collection of data that can be efficiently accessed, managed, and updated.
+
+- In system design, databases:
+
+    - Store persistent data
+    - Support ACID (or BASE) guarantees
+    - Act as the backbone of nearly all backend systems
+
+## Types of Databases
+### Relational Database (SQL)
+### Non-Relational Database (NoSQL)
+## Real-World Use Cases
+## Eviction Policies
+| Use Case      | Recommended DB      |
+| ------------- | ------------- |
+| E-commerce Catalog | MongoDB or PostgreSQL |
+| User Sessions | Redis |
+| Messaging App | Cassandra (high write throughput) |
+| Banking App | PostgreSQL or Oracle |
+| Social Network | Neo4j |
+| Configuration Storage | etcd, Consul |
+| Banking App | Elastic Search |
+
+## Design Patterns
+### Read replicas
+- Read-heavy systems use read replicas to scale reads.
+- Primary node handles writes; secondaries replicate asynchronously.
+- Tools: PostgreSQL replication, MySQL master-slave, AWS RDS read replicas
+### Sharding
+- Horizontal partitioning of data across multiple nodes.
+- Reduces write and storage bottlenecks.
+- Used In: MongoDB, Cassandra, Elasticsearch
+### Write-Ahead Logs
+- Every change is written to a log before being applied.
+- Ensures durability and crash recovery.
+- Used In: PostgreSQL, Kafka, MySQL
+### Caching Layer in Front of DB
+- Reduces DB load for frequent queries.
+- Use Redis or Memcached.
+### CQRS (Command Query Responsibility Segregation)
+- Separate read and write models for complex systems.
+- Optimizes performance and scaling.
