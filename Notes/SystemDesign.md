@@ -199,9 +199,35 @@ A database is an organized collection of data that can be efficiently accessed, 
 
 ## Types of Databases
 ### Relational Database (SQL)
+- Data is stored in tables with rows and columns
+- Enforce schemas and relationships
+- Support ACID transactions (Atomicity, Consistency, Isolation, Durability)
+- SQL databases are commonly use when you need structured data
+- Strong consistency is critical (e.g., financial apps)
+- Complex queries with JOINS
 ### Non-Relational Database (NoSQL)
+- Document Stores
+    - Store data as JSON-like documents
+    - Flexible schema
+    - Great for hierarchical/nested data
+    - Example: MongoDB, Couchbase
+
+- Key-Value Stores
+    - Very fast — retrieve data via a key
+    - Simple and low-latency
+    - Example: Redis, DynamoDB, Riak
+
+- Wide Column Stores
+    - Data stored in column families
+    - Designed for high write throughput and horizontal scalability
+    - Example: Apache Cassandra, HBase
+
+- Graph Databases
+    - Store data in nodes and edges
+    - Ideal for highly connected data
+    - Example: Neo4j, Amazon Neptune
+
 ## Real-World Use Cases
-## Eviction Policies
 | Use Case      | Recommended DB      |
 | ------------- | ------------- |
 | E-commerce Catalog | MongoDB or PostgreSQL |
@@ -231,3 +257,6 @@ A database is an organized collection of data that can be efficiently accessed, 
 ### CQRS (Command Query Responsibility Segregation)
 - Separate read and write models for complex systems.
 - Optimizes performance and scaling.
+
+## Indexing in Databases
+- An index is a data structure (usually a B-tree or hash) that allows the database to quickly locate rows in a table without scanning every row.
